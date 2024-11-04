@@ -8,8 +8,8 @@ DEBUG = True
 
 # REMOVED PERSAONAL LOGIN DETAILS
 # Connect to the database
-db_name = "postgres"
-db_pword = "Alona1996l!"
+db_name = ""
+db_pword = "!"
 
 # TODO IMPLEMENT DATABASE URL
 SQLALCHEMY_DATABASE_URI = f'postgresql://{db_name}:{db_pword}@localhost:5432/fyyurapp'
