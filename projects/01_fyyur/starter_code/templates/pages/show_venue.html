@@ -76,6 +76,25 @@
 </section>
 
 <a href="/venues/{{ venue.id }}/edit"><button class="btn btn-primary btn-lg">Edit</button></a>
+<!--Added delete button to delete current venue and linked shows-->
+<button class="delete-button btn btn-primary btn-lg" data-id="{{ venue.id }}">Delete</button></a>
+<script>
+	const deleteButton = document.querySelector('.delete-button');
+	// run this function when the cross button is clicked
+	deleteButton.onclick = function(e) {
+        // get the id of the data
+		const todeleteId = e.target.dataset['id'];
+		// run the fetch event on the delete endpoint to perform the DELETE 
+		fetch('/venues/' + todeleteId, {
+			// method will be DELETE as it is a delete operation being performed. No JSON required
+			method: 'DELETE'
+		}).then(function(){
+			// return to home page once deleted
+			window.location.href = '/';
+		});
+	};
+</script>
+
 
 {% endblock %}
 
